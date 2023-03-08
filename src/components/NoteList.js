@@ -1,19 +1,20 @@
-import React from 'react'
-import db from '../db/data.json'
+// import db from '../db/data.json'
+import { useEffect, useState } from 'react'
+import Note from './Note'
 
 export default function NoteList() {
+  const [notes, setNotes] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost:3001/notes')
+      .then((res) => res.json())
+      .then((data) => setNotes(data))
+  }, [])
+
   return (
     <ul className="list">
-      {db.notes.map((note) => (
-        <li className="note" key={note.id}>
-          <h4 className="title">{note.title}</h4>
-          <p>{note.detail}</p>
-          <div className="bottom">
-            <div className="date">{note.date}</div>
-            <button>수정</button>
-            <button>삭제</button>
-          </div>
-        </li>
+      {notes.map((note) => (
+        <Note note={note} key={note.id} />
       ))}
     </ul>
   )
