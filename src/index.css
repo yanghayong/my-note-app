@@ -75,6 +75,10 @@ body {
   gap: 16px;
 }
 
+.note .bottom .btns span {
+  cursor: pointer;
+}
+
 /* write */
 .container {
   max-width: 500px;

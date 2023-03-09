@@ -30,6 +30,11 @@ export default function Write() {
     })
   }
 
+  function goBack(e) {
+    e.preventDefault()
+    navigate(-1)
+  }
+
   return (
     <div className='container'>
       <h2>노트 작성</h2>
@@ -48,7 +53,7 @@ export default function Write() {
           ></textarea>
         </div>
         <div>
-          <button>취소하기</button>
+          <button onClick={goBack}>취소하기</button>
           <button onClick={onWrite}>작성하기</button>
         </div>
       </form>
