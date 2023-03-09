@@ -1,5 +1,5 @@
-import { useRef } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useRef } from "react"
+import { useLocation, useNavigate } from "react-router-dom"
 
 export default function Edit() {
   const navigate = useNavigate()
@@ -15,9 +15,9 @@ export default function Edit() {
   function onEdit(e) {
     e.preventDefault()
     fetch(`http://localhost:3001/notes/${note.id}`, {
-      method: 'PUT',
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         ...note,
@@ -26,7 +26,7 @@ export default function Edit() {
       }),
     }).then(res => {
       if (res.ok) {
-        navigate('/')
+        navigate("/")
       }
     })
   }
