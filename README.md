@@ -3,6 +3,7 @@
 ### json server
 
 npm i json-server  
+npm i -g json-server
 json-server --watch ./src/db/data.json --port 3001
 
 참고  
