@@ -2,110 +2,108 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
-ul {
   list-style: none;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 body {
   background-color: #eee;
 }
-button {
-  padding: 4px 12px;
-  cursor: pointer;
-  margin: 0 6px;
-}
+
 .App {
   max-width: 1000px;
+  padding: 0 16px;
   margin: 0 auto;
-  padding: 20px 16px;
 }
 
-header {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 26px;
+  margin: 30px 0;
 }
 
-.note_list {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 16px;
+.header h1 {
+  font-size: 36px;
 }
+
+.header button {
+  padding: 10px 20px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
 .note {
   background-color: #fff;
   padding: 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
   border-radius: 8px;
-  box-shadow: 0 0 18px rgba(0, 0, 0, 0.05);
 }
-.note h3 {
-  font-size: 16px;
+
+.note h4 {
+  font-size: 18px;
   margin-bottom: 10px;
 }
+
 .note p {
-  font-size: 14px;
-  margin-bottom: 10px;
-  min-height: 140px;
+  min-height: 160px;
+  font-size: 15px;
 }
-.note div {
+
+.note .bottom {
   display: flex;
-  font-size: 13px;
   align-items: center;
-  justify-content: center;
+}
+
+.note .bottom .date {
+  margin-right: auto;
+  font-size: 14px;
   color: #666;
 }
-.note div span:first-child {
-  margin-right: auto;
-}
-.note div a {
-  display: block;
-  padding: 6px;
+
+.note .bottom .btns {
   font-size: 20px;
+  display: flex;
+  gap: 16px;
 }
 
-.note div a:hover {
-  color: #000;
-}
-
+/* write */
 .container {
   max-width: 500px;
   margin: 0 auto;
 }
+
 .container h2 {
-  font-weight: normal;
-  margin-bottom: 20px;
+  font-size: 30px;
+  margin: 20px;
   text-align: center;
 }
+
 form div {
   margin-bottom: 20px;
   font-size: 18px;
 }
-form div label {
+
+form label {
   display: block;
   margin-bottom: 10px;
 }
-form div input,
-form div textarea {
+
+form input,
+form textarea {
   width: 100%;
   padding: 12px;
 }
 
-@media (min-width: 576px) {
-  .note_list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-}
-
-@media (min-width: 768px) {
-  .note_list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
+form button {
+  padding: 10px 20px;
+  margin: 4px;
 }

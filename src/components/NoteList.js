@@ -3,16 +3,16 @@ import { useEffect, useState } from 'react'
 import Note from './Note'
 
 export default function NoteList() {
-  const [notes, SetNotes] = useState([])
+  const [notes, setNotes] = useState([])
 
   useEffect(() => {
     fetch('http://localhost:3001/notes')
       .then(res => res.json())
-      .then(data => SetNotes(data))
+      .then(data => setNotes(data))
   }, [])
 
   return (
-    <ul className="note_list">
+    <ul className='list'>
       {notes.map(note => (
         <Note note={note} key={note.id} />
       ))}
