@@ -13,9 +13,11 @@ export default function NoteList() {
       querySnapshot.forEach(doc => {
         items.push({
           ...doc.data(),
+          id: doc.id,
         })
       })
       console.log(items)
+      setNotes(items)
     })
   }, [])
 
